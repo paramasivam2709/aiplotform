@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Stackly</title>
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="preloader">
+  <img src="img/logo.png" alt="Stackly">
+  <div class="loader-bar"><span></span></div>
+  <p>Stackly</p>
+</div>
+<header id="header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><img src="img/logo.png" alt="Stackly logo">Stackly</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost btn-sm">Sign In</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<section class="page-hero">
+  <img class="blob blob-1" src="img/svg/blob.svg" alt="" style="width:420px;top:-80px;right:-80px">
+  <div class="container">
+    <span class="eyebrow" data-aos="fade-up">Stackly Journal</span>
+    <h1 data-aos="fade-up" data-aos-delay="100">Ideas, tutorials &amp; <span class="grad-text">AI insights</span></h1>
+    <p data-aos="fade-up" data-aos-delay="200">Fresh thinking from the Stackly team — new posts every week.</p>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="container">
+    <div class="blog-grid">
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="blog-thumb"><img class="art" src="img/blog/ai-knowledge-work.webp" alt="AI assistant illustration"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="cat">AI Trends</span><span>Sep 12, 2026</span></div>
+          <h3>How generative AI is reshaping knowledge work in 2026</h3><p>From drafting to decision-making — where AI assistants create the most leverage today, and what skills matter next.</p>
+          <a href="contact.html" class="more" onclick="toast('Full article coming soon!');return false">Read article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="blog-thumb"><img class="art" src="img/blog/workflow-automation.webp" alt="Workflow automation illustration"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="cat">Tutorials</span><span>Sep 8, 2026</span></div>
+          <h3>Automate your week: 5 Stackly workflows that save 10+ hours</h3><p>Step-by-step recipes for content pipelines, weekly reporting and inbox zero — all powered by AI.</p>
+          <a href="contact.html" class="more" onclick="toast('Full article coming soon!');return false">Read article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="blog-thumb"><img class="art" src="img/blog/security.webp" alt="Security shield illustration"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="cat">Security</span><span>Sep 2, 2026</span></div>
+          <h3>Inside Stackly's SOC-2 infrastructure</h3><p>A technical deep-dive into encryption, tenant isolation and audit controls that keep your data yours.</p>
+          <a href="contact.html" class="more" onclick="toast('Full article coming soon!');return false">Read article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="0">
+        <div class="blog-thumb"><img class="art" src="img/blog/ai-design.webp" alt="Design illustration"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="cat">Design</span><span>Aug 26, 2026</span></div>
+          <h3>Prompting for beautiful: a designer's guide to AI imagery</h3><p>Techniques for consistent brand style, lighting control and art direction with text-to-image models.</p>
+          <a href="contact.html" class="more" onclick="toast('Full article coming soon!');return false">Read article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+        <div class="blog-thumb"><img class="art" src="img/blog/analytics.webp" alt="Analytics illustration"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="cat">Product</span><span>Aug 19, 2026</span></div>
+          <h3>New: real-time data analytics dashboards</h3><p>Connect your database and get live AI-powered dashboards with anomaly detection in minutes.</p>
+          <a href="contact.html" class="more" onclick="toast('Full article coming soon!');return false">Read article →</a>
+        </div>
+      </article>
+
+      <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+        <div class="blog-thumb"><img class="art" src="img/blog/team-culture.webp" alt="Team culture illustration"></div>
+        <div class="blog-body">
+          <div class="blog-meta"><span class="cat">Culture</span><span>Aug 12, 2026</span></div>
+          <h3>How we ship AI features every single week</h3><p>A look inside our build-measure-learn loop and why small bets beat big launches.</p>
+          <a href="contact.html" class="more" onclick="toast('Full article coming soon!');return false">Read article →</a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="container">
+    <div class="cta-band" data-aos="zoom-in">
+      <h2>Never miss a post</h2>
+      <p>Join 8,000+ readers getting our weekly AI digest.</p>
+      <form class="newsletter" style="max-width:420px;margin:0 auto;position:relative;z-index:1"><input type="email" placeholder="Your email address" required><button type="submit">Subscribe</button></form>
+    </div>
+  </div>
+</section>
+<section class="extra-section"><div class="container"><div class="sec-head"><span class="eyebrow">Explore more</span><h2>Keep learning with <span class="grad-text">Stackly</span></h2><p>Practical topics for building thoughtful AI workflows.</p></div><div class="svc-grid"><article class="svc-card"><h3>Prompting essentials</h3><p>Give AI useful context, define the task and iterate on results.</p><a href="services.html">Explore services →</a></article><article class="svc-card"><h3>Responsible AI at work</h3><p>Review outputs, protect sensitive information and keep humans in the loop.</p><a href="about.html">Our approach →</a></article><article class="svc-card"><h3>Measure what matters</h3><p>Track time saved, output quality and the outcomes your team cares about.</p><a href="pricing.html">View plans →</a></article></div></div></section>
+<footer>
+<div class="foot-grid container">
+  <div class="foot-brand">
+    <a href="index.html" class="brand"><img src="img/logo.png" alt="">Stackly</a>
+    <p>Next-generation AI tools that help individuals and businesses work smarter, faster, and better.</p>
+    <div class="socials">
+      <a href="contact.html" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.2l7.3-8.3L2.8 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20z"/></svg></a>
+      <a href="contact.html" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.2 4.9 18.2 5.2 18.2 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+      <a href="contact.html" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V21H9z"/></svg></a>
+      <a href="contact.html" aria-label="Dribbble"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm7.9 5.6a10.2 10.2 0 0 1 2.3 6.4c-.4-.1-3.7-.8-7-.3l-.6-1.5a10.5 10.5 0 0 0 6.3-4.6zM12 1.8c2.6 0 5 1 6.8 2.6a13 13 0 0 1-5.9 4.3A51 51 0 0 0 9.4 2a10 10 0 0 1 2.6-.2zM7.4 2.6a61 61 0 0 1 3.6 6.3c-4.5 1.2-8.5 1.2-9.9 1.2a10.3 10.3 0 0 1 6.3-7.5zM1.8 12v-.3c1.4 0 6.2.1 11.1-1.6l.8 1.7c-5.1 1.4-7.9 5.3-8.6 6.3A10.1 10.1 0 0 1 1.8 12zM12 22.2a10 10 0 0 1-6.1-2.1c.4-.7 2.5-4.3 8.3-6.1a42 42 0 0 1 2.2 7.7 10 10 0 0 1-4.4.5zm6-1.4c-.1-.7-.8-4-2-7.6 3.1-.5 5.9.3 6.2.4a10.2 10.2 0 0 1-4.2 7.2z"/></svg></a>
+    </div>
+  </div>
+  <div>
+    <h4>Company</h4>
+    <ul class="foot-links">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Resources</h4>
+    <ul class="foot-links">
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Sign In</a></li>
+      <li><a href="register.html">Get Started</a></li>
+      <li><a href="404.html">Status</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Stay Updated</h4>
+    <p style="font-size:14px;color:#94a3b8">Get AI tips & product news in your inbox.</p>
+    <form class="newsletter"><input type="email" placeholder="Your email address" required><button type="submit">Join</button></form>
+  </div>
+</div>
+<div class="foot-bottom container">
+  <span>© 2026 Stackly Inc. All rights reserved.</span>
+  <span>Privacy · Terms · Cookies</span>
+</div></footer>
+<button id="toTop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

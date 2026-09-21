@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Dashboard — Stackly</title>
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-needs-role="user">
+
+<div id="preloader">
+  <img src="img/logo.png" alt="Stackly">
+  <div class="loader-bar"><span></span></div>
+  <p>Stackly</p>
+</div>
+
+<div class="dash">
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="brand"><img src="img/logo.png" width="32" alt="">Stackly</a>
+    <p class="side-label">Menu</p>
+    <button class="side-link active">▦ Dashboard</button>
+    <button class="side-link">✎ AI Tools</button>
+    <button class="side-link">📁 Projects</button>
+    <button class="side-link">📊 Analytics</button>
+    <button class="side-link">⚙ Settings</button>
+    <p class="side-label">Plan</p>
+    <div style="background:rgba(255,255,255,.06);border-radius:14px;padding:14px;margin:0 4px">
+      <b style="font-size:13.5px">Pro Plan</b>
+      <div style="height:6px;border-radius:99px;background:rgba(255,255,255,.12);margin:8px 0 6px"><div style="width:68%;height:100%;border-radius:99px;background:var(--grad)"></div></div>
+      <small style="color:#94a3b8;font-size:11.5px">680 / 1,000 credits used</small>
+    </div>
+    <button class="side-link logout-btn">⏻ Log Out</button>
+  </aside>
+  <main class="dash-main">
+    <div class="dash-top">
+      <div style="display:flex;align-items:center;gap:14px">
+        <button class="menu-btn" id="sidebarToggle">☰</button>
+        <div><h1>Good morning, <span data-user-name>User</span> 👋</h1><p id="dashClock">Loading…</p></div>
+      </div>
+      <div class="dash-user"><span class="avatar" data-user-initial>U</span><div><b data-user-name>User</b><small data-user-email>user@stackly.com</small></div></div>
+    </div>
+
+    <div class="stat-cards">
+      <div class="stat-card"><div class="top"><span class="ico" style="background:rgba(37,99,235,.09);color:var(--blue)">✎</span><span class="trend up">+18%</span></div><div class="num">128</div><div class="lbl">AI Tasks This Month</div></div>
+      <div class="stat-card"><div class="top"><span class="ico" style="background:rgba(168,85,247,.1);color:var(--purple)">📁</span><span class="trend up">+5</span></div><div class="num">24</div><div class="lbl">Active Projects</div></div>
+      <div class="stat-card"><div class="top"><span class="ico" style="background:rgba(5,150,105,.1);color:#059669">⚡</span><span class="trend up">+82%</span></div><div class="num">36h</div><div class="lbl">Hours Saved</div></div>
+      <div class="stat-card"><div class="top"><span class="ico" style="background:rgba(236,72,153,.1);color:#db2777">🖼</span><span class="trend down">−3%</span></div><div class="num">412</div><div class="lbl">Images Generated</div></div>
+    </div>
+
+    <div class="dash-cols">
+      <div class="panel">
+        <h3>AI Usage Overview <small>Last 12 months</small></h3>
+        <div class="chart" id="barChart" data-values="[40,65,50,80,58,92,70,100,62,85,74,95]"></div>
+      </div>
+      <div class="panel">
+        <h3>Credits Remaining <small>Renews Oct 1</small></h3>
+        <div class="ring-wrap">
+          <svg class="ring-svg" width="120" height="120" viewBox="0 0 120 120">
+            <defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs>
+            <circle class="bg" cx="60" cy="60" r="54"/>
+            <circle class="fg" cx="60" cy="60" r="54" data-pct="68" transform="rotate(-90 60 60)"/>
+          </svg>
+          <div><div id="ringPct" style="font-size:34px;font-weight:800" class="grad-text">0%</div><p style="color:var(--muted);font-size:13.5px">of monthly<br>credit pool left</p></div>
+        </div>
+        <hr style="border:none;border-top:1px solid var(--line);margin:22px 0">
+        <h3 style="margin-bottom:14px">Quick Actions</h3>
+        <div style="display:grid;gap:10px">
+          <button class="btn btn-primary btn-sm" onclick="toast('AI Content tool launching…')" style="justify-content:flex-start">✎ Generate Content</button>
+          <button class="btn btn-ghost btn-sm" onclick="toast('Image Studio launching…')" style="justify-content:flex-start">🖼 Create Image</button>
+          <button class="btn btn-ghost btn-sm" onclick="toast('New workflow created!')" style="justify-content:flex-start">⚙ New Workflow</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-cols">
+      <div class="panel">
+        <h3>Recent Projects <small>Click headers to sort</small></h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th data-sort>Project</th><th data-sort>Tool</th><th data-sort>Status</th><th data-sort>Updated</th></tr></thead>
+          <tbody>
+            <tr><td><b>Q3 Marketing Copy</b></td><td>Content AI</td><td><span class="pill green">Completed</span></td><td>2h ago</td></tr>
+            <tr><td><b>Hero Banner v3</b></td><td>Image Studio</td><td><span class="pill blue">In Progress</span></td><td>5h ago</td></tr>
+            <tr><td><b>Sales Dashboard</b></td><td>Analytics</td><td><span class="pill green">Completed</span></td><td>Yesterday</td></tr>
+            <tr><td><b>Support Bot Training</b></td><td>Chat AI</td><td><span class="pill amber">Draft</span></td><td>2 days ago</td></tr>
+            <tr><td><b>Email Nurture Flow</b></td><td>Workflows</td><td><span class="pill blue">In Progress</span></td><td>3 days ago</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="panel">
+        <h3>Recent Activity</h3>
+        <div class="activity">
+          <div class="act"><span class="dot" style="background:#2563eb"></span><div><b>Blog post generated</b> "10 AI trends for 2026"<small>2 hours ago</small></div></div>
+          <div class="act"><span class="dot" style="background:#7c3aed"></span><div><b>12 images created</b> Product launch set<small>6 hours ago</small></div></div>
+          <div class="act"><span class="dot" style="background:#059669"></span><div><b>Workflow completed</b> Weekly report → Slack<small>Yesterday</small></div></div>
+          <div class="act"><span class="dot" style="background:#d97706"></span><div><b>Plan upgraded</b> Starter → Pro<small>Last week</small></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<button id="toTop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>

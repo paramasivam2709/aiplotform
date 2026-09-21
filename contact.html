@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Stackly</title>
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div id="preloader">
+  <img src="img/logo.png" alt="Stackly">
+  <div class="loader-bar"><span></span></div>
+  <p>Stackly</p>
+</div>
+<header id="header">
+  <div class="container nav">
+    <a href="index.html" class="brand"><img src="img/logo.png" alt="Stackly logo">Stackly</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="blog.html">Blog</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-ghost btn-sm">Sign In</a>
+      <a href="register.html" class="btn btn-primary btn-sm">Get Started</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+<section class="page-hero">
+  <img class="blob blob-1" src="img/svg/blob.svg" alt="" style="width:420px;top:-80px;right:-80px">
+  <div class="container">
+    <span class="eyebrow" data-aos="fade-up">Contact</span>
+    <h1 data-aos="fade-up" data-aos-delay="100">Let's start a <span class="grad-text">conversation</span></h1>
+    <p data-aos="fade-up" data-aos-delay="200">Questions, demos, partnerships — we reply within 24 hours.</p>
+  </div>
+</section>
+
+<section style="padding-top:20px">
+  <div class="container contact-grid">
+    <div class="contact-info">
+      <div class="ci-card" data-aos="fade-right"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M2 7l10 6 10-6"/></svg></span><div><b>Email us</b><span>hello@stackly.com</span></div></div>
+      <div class="ci-card" data-aos="fade-right" data-aos-delay="100"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.9.5 2.9.7a2 2 0 0 1 1.6 1.9z"/></svg></span><div><b>Call us</b><span>+1 (555) 123-4567</span></div></div>
+      <div class="ci-card" data-aos="fade-right" data-aos-delay="200"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><div><b>Visit us</b><span>100 Innovation Dr, San Francisco, CA</span></div></div>
+      <div class="ci-card" data-aos="fade-right" data-aos-delay="300"><span class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></span><div><b>Support hours</b><span>Mon–Fri, 9am–6pm PT</span></div></div>
+    </div>
+    <div class="form-card" data-aos="fade-left">
+      <h2 style="font-size:26px;letter-spacing:-.5px;margin-bottom:22px">Send us a message</h2>
+      <form id="contactForm" novalidate>
+        <div class="form-row">
+          <div class="field"><label>Full Name</label><input type="text" name="name" placeholder="Jane Doe" required pattern="[A-Za-z ]+" title="Use letters and spaces only" autocomplete="name"></div>
+          <div class="field"><label>Email Address</label><input type="email" name="email" placeholder="jane@company.com" required></div>
+        </div>
+        <div class="form-row">
+          <div class="field"><label>Subject</label>
+            <select name="subject"><option>General inquiry</option><option>Sales &amp; demo</option><option>Partnership</option><option>Support</option></select>
+          </div>
+          <div class="field"><label>Company (optional)</label><input type="text" placeholder="Acme Inc."></div>
+        </div>
+        <div class="field"><label>Message</label><textarea name="message" placeholder="Tell us how we can help..."></textarea></div>
+        <button type="submit" class="btn btn-primary" style="width:100%">Send Message →</button>
+        <p class="form-msg" id="formMsg"></p>
+      </form>
+    </div>
+  </div>
+</section>
+<section class="container" style="padding:30px 0 70px">
+  <h2>Find Stackly</h2>
+  <div style="border-radius:18px;overflow:hidden;min-height:320px">
+    <iframe title="Stackly map" src="https://www.google.com/maps?q=Stackly&output=embed" width="100%" height="320" style="border:0" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </div>
+</section>
+<footer>
+<div class="foot-grid container">
+  <div class="foot-brand">
+    <a href="index.html" class="brand"><img src="img/logo.png" alt="">Stackly</a>
+    <p>Next-generation AI tools that help individuals and businesses work smarter, faster, and better.</p>
+    <div class="socials">
+      <a href="contact.html" aria-label="X"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3l-4.9-6.4L6.4 22H3.2l7.3-8.3L2.8 2h6.4l4.4 5.9L18.9 2zm-1.1 18h1.7L7.1 3.9H5.3L17.8 20z"/></svg></a>
+      <a href="contact.html" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C17.2 4.9 18.2 5.2 18.2 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg></a>
+      <a href="contact.html" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V21H9z"/></svg></a>
+      <a href="contact.html" aria-label="Dribbble"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0a12 12 0 1 0 0 24 12 12 0 0 0 0-24zm7.9 5.6a10.2 10.2 0 0 1 2.3 6.4c-.4-.1-3.7-.8-7-.3l-.6-1.5a10.5 10.5 0 0 0 6.3-4.6zM12 1.8c2.6 0 5 1 6.8 2.6a13 13 0 0 1-5.9 4.3A51 51 0 0 0 9.4 2a10 10 0 0 1 2.6-.2zM7.4 2.6a61 61 0 0 1 3.6 6.3c-4.5 1.2-8.5 1.2-9.9 1.2a10.3 10.3 0 0 1 6.3-7.5zM1.8 12v-.3c1.4 0 6.2.1 11.1-1.6l.8 1.7c-5.1 1.4-7.9 5.3-8.6 6.3A10.1 10.1 0 0 1 1.8 12zM12 22.2a10 10 0 0 1-6.1-2.1c.4-.7 2.5-4.3 8.3-6.1a42 42 0 0 1 2.2 7.7 10 10 0 0 1-4.4.5zm6-1.4c-.1-.7-.8-4-2-7.6 3.1-.5 5.9.3 6.2.4a10.2 10.2 0 0 1-4.2 7.2z"/></svg></a>
+    </div>
+  </div>
+  <div>
+    <h4>Company</h4>
+    <ul class="foot-links">
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="pricing.html">Pricing</a></li>
+      <li><a href="blog.html">Blog</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Resources</h4>
+    <ul class="foot-links">
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="login.html">Sign In</a></li>
+      <li><a href="register.html">Get Started</a></li>
+      <li><a href="404.html">Status</a></li>
+    </ul>
+  </div>
+  <div>
+    <h4>Stay Updated</h4>
+    <p style="font-size:14px;color:#94a3b8">Get AI tips & product news in your inbox.</p>
+    <form class="newsletter"><input type="email" placeholder="Your email address" required><button type="submit">Join</button></form>
+  </div>
+</div>
+<div class="foot-bottom container">
+  <span>© 2026 Stackly Inc. All rights reserved.</span>
+  <span>Privacy · Terms · Cookies</span>
+</div></footer>
+<button id="toTop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

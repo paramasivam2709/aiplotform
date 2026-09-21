@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — Stackly</title>
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-needs-role="admin">
+
+<div id="preloader">
+  <img src="img/logo.png" alt="Stackly">
+  <div class="loader-bar"><span></span></div>
+  <p>Stackly</p>
+</div>
+
+<div class="dash">
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="brand"><img src="img/logo.png" width="32" alt="">Stackly</a>
+    <p class="side-label">Admin</p>
+    <button class="side-link active">▦ Overview</button>
+    <button class="side-link">👥 Users</button>
+    <button class="side-link">💳 Subscriptions</button>
+    <button class="side-link">📈 Revenue</button>
+    <button class="side-link">🛡 Moderation</button>
+    <button class="side-link">⚙ Settings</button>
+    <p class="side-label">System</p>
+    <div style="background:rgba(74,222,128,.08);border:1px solid rgba(74,222,128,.25);border-radius:14px;padding:12px 14px;margin:0 4px">
+      <b style="font-size:13px;color:#4ade80">● All systems operational</b><br><small style="color:#94a3b8;font-size:11.5px">99.98% uptime · 30 days</small>
+    </div>
+    <button class="side-link logout-btn">⏻ Log Out</button>
+  </aside>
+  <main class="dash-main">
+    <div class="dash-top">
+      <div style="display:flex;align-items:center;gap:14px">
+        <button class="menu-btn" id="sidebarToggle">☰</button>
+        <div><h1>Admin Console</h1><p id="dashClock">Loading…</p></div>
+      </div>
+      <div class="dash-user"><span class="avatar" data-user-initial>A</span><div><b data-user-name>Admin</b><small data-user-role>Administrator</small></div></div>
+    </div>
+
+    <div class="stat-cards">
+      <div class="stat-card"><div class="top"><span class="ico" style="background:rgba(37,99,235,.09);color:var(--blue)">👥</span><span class="trend up">+12%</span></div><div class="num"><span data-count="10247">0</span></div><div class="lbl">Total Users</div></div>
+      <div class="stat-card"><div class="top"><span class="ico" style="background:rgba(5,150,105,.1);color:#059669">💳</span><span class="trend up">+8%</span></div><div class="num">$<span data-count="84" data-suffix="K">0</span></div><div class="lbl">MRR</div></div>
+      <div class="stat-card"><div class="top"><span class="ico" style="background:rgba(168,85,247,.1);color:var(--purple)">⚡</span><span class="trend up">+24%</span></div><div class="num"><span data-count="1.4" >0</span>M</div><div class="lbl">AI Tasks / Mo</div></div>
+      <div class="stat-card"><div class="top"><span class="ico" style="background:rgba(220,38,38,.1);color:#dc2626">🎫</span><span class="trend down">−5</span></div><div class="num">18</div><div class="lbl">Open Tickets</div></div>
+    </div>
+
+    <div class="dash-cols">
+      <div class="panel">
+        <h3>Platform Growth <small>New users per month</small></h3>
+        <div class="chart" id="barChart" data-values="[22,35,30,48,44,62,58,80,72,90,86,100]" data-labels='["Oct","Nov","Dec","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep"]'></div>
+      </div>
+      <div class="panel">
+        <h3>Plan Distribution</h3>
+        <div class="ring-wrap">
+          <svg class="ring-svg" width="120" height="120" viewBox="0 0 120 120">
+            <defs><linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563eb"/><stop offset="1" stop-color="#a855f7"/></linearGradient></defs>
+            <circle class="bg" cx="60" cy="60" r="54"/>
+            <circle class="fg" cx="60" cy="60" r="54" data-pct="82" transform="rotate(-90 60 60)"/>
+          </svg>
+          <div><div id="ringPct" style="font-size:34px;font-weight:800" class="grad-text">0%</div><p style="color:var(--muted);font-size:13.5px">free-to-paid<br>conversion</p></div>
+        </div>
+        <hr style="border:none;border-top:1px solid var(--line);margin:20px 0">
+        <div style="display:grid;gap:10px;font-size:14px">
+          <div style="display:flex;justify-content:space-between"><span>● Starter (free)</span><b>7,380</b></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--violet)">● Pro</span><b>2,410</b></div>
+          <div style="display:flex;justify-content:space-between"><span style="color:var(--blue)">● Enterprise</span><b>457</b></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="dash-cols">
+      <div class="panel">
+        <h3>Latest Users <small>Click headers to sort</small></h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th data-sort>User</th><th data-sort>Email</th><th data-sort>Plan</th><th data-sort>Status</th></tr></thead>
+          <tbody>
+            <tr><td><b>Sara Chen</b></td><td>sara@acme.co</td><td><span class="pill violet">Pro</span></td><td><span class="pill green">Active</span></td></tr>
+            <tr><td><b>Diego Marin</b></td><td>diego@studio.com</td><td><span class="pill blue">Starter</span></td><td><span class="pill green">Active</span></td></tr>
+            <tr><td><b>Amara Osei</b></td><td>amara@fintech.io</td><td><span class="pill violet">Pro</span></td><td><span class="pill amber">Trial</span></td></tr>
+            <tr><td><b>Liam Novak</b></td><td>liam@corp.net</td><td><span class="pill green">Enterprise</span></td><td><span class="pill green">Active</span></td></tr>
+            <tr><td><b>Yuki Tanaka</b></td><td>yuki@lab.jp</td><td><span class="pill blue">Starter</span></td><td><span class="pill red">Suspended</span></td></tr>
+          </tbody>
+        </table></div>
+      </div>
+      <div class="panel">
+        <h3>System Activity</h3>
+        <div class="activity">
+          <div class="act"><span class="dot" style="background:#059669"></span><div><b>New Enterprise signup</b> NovaHealth Inc.<small>12 min ago</small></div></div>
+          <div class="act"><span class="dot" style="background:#2563eb"></span><div><b>Model upgraded</b> gpt-stackly-v3 deployed<small>1 hour ago</small></div></div>
+          <div class="act"><span class="dot" style="background:#d97706"></span><div><b>Usage spike detected</b> EU region · auto-scaled<small>3 hours ago</small></div></div>
+          <div class="act"><span class="dot" style="background:#dc2626"></span><div><b>Payment failed</b> 3 accounts · retry scheduled<small>5 hours ago</small></div></div>
+          <div class="act"><span class="dot" style="background:#7c3aed"></span><div><b>Weekly report sent</b> to 42 admin emails<small>Yesterday</small></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+<button id="toTop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
