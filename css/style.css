@@ -278,7 +278,7 @@ footer h4{color:#fff;font-size:16px;margin-bottom:18px}
 /* ---------- AUTH ---------- */
 .auth-wrap{min-height:100vh;display:grid;grid-template-columns:1fr 1fr}
 body.login-page .auth-wrap{padding:0}
-body.login-page .auth-form-side{padding-top:0;padding-bottom:0}
+body.login-page .auth-form-side{align-items:flex-start;padding:72px 30px 50px}
 .auth-side{background:var(--grad);color:#fff;padding:60px;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
 .auth-side::before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:rgba(255,255,255,.1);bottom:-160px;right:-140px}
 .auth-side h2{font-size:36px;letter-spacing:-1px;margin:22px 0 14px;position:relative;z-index:1}
@@ -288,7 +288,7 @@ body.login-page .auth-form-side{padding-top:0;padding-bottom:0}
 .auth-points .ck{width:26px;height:26px;flex:none;border-radius:50%;background:rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center}
 .auth-form-side{display:flex;align-items:center;justify-content:center;padding:50px 30px}
 .auth-card{width:min(430px,100%)}
-.login-home-link{margin-bottom:20px}
+.login-home-link{display:flex;width:fit-content;margin:26px auto 20px}
 .auth-card h1{font-size:30px;letter-spacing:-1px;margin:26px 0 8px}
 .auth-card>p{color:var(--muted);font-size:15px;margin-bottom:28px}
 .role-tabs{display:grid;grid-template-columns:1fr 1fr;background:#eef2ff;border-radius:14px;padding:5px;margin-bottom:24px}
