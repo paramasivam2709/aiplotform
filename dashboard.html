@@ -22,11 +22,11 @@
   <aside class="sidebar" id="sidebar">
     <a href="index.html" class="brand"><img src="img/logo.png" width="32" alt="">Stackly</a>
     <p class="side-label">Menu</p>
-    <button class="side-link active">▦ Dashboard</button>
-    <button class="side-link">✎ AI Tools</button>
-    <button class="side-link">📁 Projects</button>
-    <button class="side-link">📊 Analytics</button>
-    <button class="side-link">⚙ Settings</button>
+    <button class="side-link active" data-view="dashboard" aria-current="page">▦ Dashboard</button>
+    <button class="side-link" data-view="tools">✎ AI Tools</button>
+    <button class="side-link" data-view="projects">📁 Projects</button>
+    <button class="side-link" data-view="analytics">📊 Analytics</button>
+    <button class="side-link" data-view="settings">⚙ Settings</button>
     <p class="side-label">Plan</p>
     <div style="background:rgba(255,255,255,.06);border-radius:14px;padding:14px;margin:0 4px">
       <b style="font-size:13.5px">Pro Plan</b>
@@ -36,10 +36,11 @@
     <button class="side-link logout-btn">⏻ Log Out</button>
   </aside>
   <main class="dash-main">
+    <section class="dash-view" data-view-panel="dashboard">
     <div class="dash-top">
       <div style="display:flex;align-items:center;gap:14px">
-        <button class="menu-btn" id="sidebarToggle">☰</button>
-        <div><h1>Good morning, <span data-user-name>User</span> 👋</h1><p id="dashClock">Loading…</p></div>
+        <button class="menu-btn" id="sidebarToggle" data-sidebar-toggle aria-label="Open navigation">☰</button>
+        <div><h1>Welcome, <span data-user-name>User</span> 👋</h1><p id="dashClock">Loading…</p></div>
       </div>
       <div class="dash-user"><span class="avatar" data-user-initial>U</span><div><b data-user-name>User</b><small data-user-email>user@stackly.com</small></div></div>
     </div>
@@ -100,6 +101,60 @@
         </div>
       </div>
     </div>
+    </section>
+
+    <section class="dash-view" data-view-panel="tools" hidden>
+      <div class="dash-top"><div style="display:flex;align-items:center;gap:14px"><button class="menu-btn" data-sidebar-toggle aria-label="Open navigation">☰</button><div><h1>AI Tools</h1><p>Choose a workspace for your next task.</p></div></div></div>
+      <div class="svc-grid">
+        <article class="svc-card"><span class="ico" aria-hidden="true">✎</span><h3>Content Studio</h3><p>Draft blogs, emails, campaign copy and scripts in your brand voice.</p><a href="services.html">Explore content tools →</a></article>
+        <article class="svc-card"><span class="ico" aria-hidden="true">▧</span><h3>Image Studio</h3><p>Create visual concepts and product imagery from a written prompt.</p><a href="services.html">Explore image tools →</a></article>
+        <article class="svc-card"><span class="ico" aria-hidden="true">▥</span><h3>Data Analyst</h3><p>Turn spreadsheets and business questions into clear insights.</p><a href="services.html">Explore analytics →</a></article>
+        <article class="svc-card"><span class="ico" aria-hidden="true">⌘</span><h3>Workflow Builder</h3><p>Connect routine tasks and create repeatable automations.</p><a href="services.html">Explore workflows →</a></article>
+        <article class="svc-card"><span class="ico" aria-hidden="true">◌</span><h3>AI Assistant</h3><p>Get help organizing ideas, answering questions and moving work forward.</p><a href="services.html">Explore assistants →</a></article>
+        <article class="svc-card"><span class="ico" aria-hidden="true">◇</span><h3>Explore all tools</h3><p>See the full Stackly toolkit and find the right fit for your work.</p><a href="services.html">View services →</a></article>
+      </div>
+    </section>
+
+    <section class="dash-view" data-view-panel="projects" hidden>
+      <div class="dash-top"><div style="display:flex;align-items:center;gap:14px"><button class="menu-btn" data-sidebar-toggle aria-label="Open navigation">☰</button><div><h1>Projects</h1><p>Recent work across your Stackly workspace.</p></div></div><span class="pill blue">24 active projects</span></div>
+      <div class="panel">
+        <h3>All Projects <small>Updated recently</small></h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Project</th><th>Tool</th><th>Status</th><th>Updated</th></tr></thead>
+          <tbody>
+            <tr><td><b>Q3 Marketing Copy</b></td><td>Content AI</td><td><span class="pill green">Completed</span></td><td>2h ago</td></tr>
+            <tr><td><b>Hero Banner v3</b></td><td>Image Studio</td><td><span class="pill blue">In Progress</span></td><td>5h ago</td></tr>
+            <tr><td><b>Sales Dashboard</b></td><td>Analytics</td><td><span class="pill green">Completed</span></td><td>Yesterday</td></tr>
+            <tr><td><b>Support Bot Training</b></td><td>Chat AI</td><td><span class="pill amber">Draft</span></td><td>2 days ago</td></tr>
+            <tr><td><b>Email Nurture Flow</b></td><td>Workflows</td><td><span class="pill blue">In Progress</span></td><td>3 days ago</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <section class="dash-view" data-view-panel="analytics" hidden>
+      <div class="dash-top"><div style="display:flex;align-items:center;gap:14px"><button class="menu-btn" data-sidebar-toggle aria-label="Open navigation">☰</button><div><h1>Analytics</h1><p>A closer look at your workspace activity.</p></div></div></div>
+      <div class="stat-cards">
+        <div class="stat-card"><div class="top"><span class="trend up">+18%</span></div><div class="num">128</div><div class="lbl">AI tasks this month</div></div>
+        <div class="stat-card"><div class="top"><span class="trend up">+5</span></div><div class="num">24</div><div class="lbl">Active projects</div></div>
+        <div class="stat-card"><div class="top"><span class="trend up">+82%</span></div><div class="num">36h</div><div class="lbl">Estimated time saved</div></div>
+        <div class="stat-card"><div class="top"><span class="trend down">−3%</span></div><div class="num">412</div><div class="lbl">Images generated</div></div>
+      </div>
+      <div class="panel"><h3>Usage Overview <small>Last 12 months</small></h3><div class="chart" id="analyticsChart" data-values="[40,65,50,80,58,92,70,100,62,85,74,95]"></div></div>
+    </section>
+
+    <section class="dash-view" data-view-panel="settings" hidden>
+      <div class="dash-top"><div style="display:flex;align-items:center;gap:14px"><button class="menu-btn" data-sidebar-toggle aria-label="Open navigation">☰</button><div><h1>Settings</h1><p>Manage your account and workspace preferences.</p></div></div></div>
+      <form class="panel" id="preferencesForm">
+        <h3>Workspace Preferences</h3>
+        <div class="check-list">
+          <label><input type="checkbox" name="weeklySummary" checked> Email me a weekly activity summary</label>
+          <label><input type="checkbox" name="productUpdates" checked> Send occasional product updates</label>
+        </div>
+        <button class="btn btn-primary btn-sm" type="submit">Save preferences</button>
+      </form>
+      <div class="panel"><h3>Account &amp; Security</h3><p style="color:var(--muted);margin-bottom:16px">Your account details and sign-in security are managed through your Stackly account.</p><a class="btn btn-ghost btn-sm" href="contact.html">Get account support</a></div>
+    </section>
   </main>
 </div>
 <button id="toTop" aria-label="Back to top"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>

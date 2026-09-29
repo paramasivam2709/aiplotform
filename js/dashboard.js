@@ -3,9 +3,40 @@
 ===================================================== */
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---- SIDEBAR VIEWS ---- */
+  const sidebar = document.getElementById('sidebar');
+  const viewButtons = document.querySelectorAll('.side-link[data-view]');
+  const viewPanels = document.querySelectorAll('[data-view-panel]');
+  viewButtons.forEach(button => button.addEventListener('click', () => {
+    const view = button.dataset.view;
+    viewButtons.forEach(item => {
+      const isActive = item === button;
+      item.classList.toggle('active', isActive);
+      if (isActive) item.setAttribute('aria-current', 'page');
+      else item.removeAttribute('aria-current');
+    });
+    viewPanels.forEach(panel => { panel.hidden = panel.dataset.viewPanel !== view; });
+    sidebar && sidebar.classList.remove('open');
+  }));
+
+  /* ---- WORKSPACE PREFERENCES ---- */
+  const preferencesForm = document.getElementById('preferencesForm');
+  if (preferencesForm) {
+    const preferences = JSON.parse(localStorage.getItem('stackly_dashboard_preferences') || '{}');
+    preferencesForm.elements.weeklySummary.checked = preferences.weeklySummary !== false;
+    preferencesForm.elements.productUpdates.checked = preferences.productUpdates !== false;
+    preferencesForm.addEventListener('submit', event => {
+      event.preventDefault();
+      localStorage.setItem('stackly_dashboard_preferences', JSON.stringify({
+        weeklySummary: preferencesForm.elements.weeklySummary.checked,
+        productUpdates: preferencesForm.elements.productUpdates.checked,
+      }));
+      toast('Workspace preferences saved.');
+    });
+  }
+
   /* ---- ANIMATED BAR CHART ---- */
-  const chart = document.getElementById('barChart');
-  if (chart) {
+  document.querySelectorAll('.chart[data-values]').forEach(chart => {
     const data = JSON.parse(chart.dataset.values || '[40,65,50,80,58,92,70,100,62,85,74,95]');
     const labels = JSON.parse(chart.dataset.labels || '["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"]');
     const max = Math.max(...data);
@@ -21,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }), { threshold: .3 });
     obs.observe(chart);
-  }
+  });
 
   /* ---- PROGRESS RING ---- */
   const ring = document.querySelector('.ring-svg .fg');

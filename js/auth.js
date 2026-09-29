@@ -97,9 +97,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }));
 
   /* ---- SIDEBAR (mobile) ---- */
-  const sbBtn = document.getElementById('sidebarToggle');
   const sidebar = document.getElementById('sidebar');
-  sbBtn && sbBtn.addEventListener('click', () => sidebar.classList.toggle('open'));
+  document.querySelectorAll('[data-sidebar-toggle]').forEach(sbBtn =>
+    sbBtn.addEventListener('click', () => sidebar.classList.toggle('open')));
 });
 
 /* Helper for demo login buttons */
